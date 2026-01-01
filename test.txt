@@ -1,0 +1,4 @@
+Hello, this is line 1.
+This is line 2 with some text.
+Line 3 here.
+And finally, line 4.

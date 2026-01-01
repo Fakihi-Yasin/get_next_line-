@@ -6,7 +6,7 @@
 /*   By: yafakihi <yafakihi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/12/27 15:44:57 by yafakihi          #+#    #+#             */
-/*   Updated: 2025/12/27 15:55:32 by yafakihi         ###   ########.fr       */
+/*   Updated: 2025/12/30 11:52:36 by yafakihi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,7 +24,7 @@ char	*get_next_line(int fd);
 // char	*ft_read(int fd, char *str);
 char	*ft_strjoin(char *s1, char *s2);
 char	*ft_strchr(char *s, int c);
-size_t	ft_strlen(char *s);
+size_t	ft_strlen(const char *s);
 char	*ft_strdup(char *s);
 char	*ft_substr(char *s, unsigned int start, size_t len);
 

@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   get_next_line_utils.h                              :+:      :+:    :+:   */
+/*   get_next_line_utils.c                              :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: yafakihi <yafakihi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/12/27 15:44:47 by yafakihi          #+#    #+#             */
-/*   Updated: 2025/12/27 15:44:48 by yafakihi         ###   ########.fr       */
+/*   Updated: 2025/12/30 11:52:50 by yafakihi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,34 +14,34 @@
 
 size_t	ft_strlen(const char *str)
 {
-	size_t	i;
+	size_t	len;
 
-	if (!str)
-		return (0);
-	i = 0;
-	while (str[i])
-		i++;
-	return (i);
+	len = 0;
+	while (str[len])
+		len++;
+	return (len);
 }
 
-char *ft_strdump(char *s1)
+char	*ft_strdup(char *s)
 {
-    char *str;
-    int i;
-    if (!s1)
-        return (NULL);
-    str = (char *)malloc(sizeof(char) * (ft_strlen(s1) + 1));
-    if (!str)
-        return (NULL);
-    i = 0;
-    while (s1[i])
-    {
-        str[i] = s1[i];
-        i++;
-    }
-    str[i] = '\0';
-    return (str);
+	char	*str;
+	int		i;
+
+	if (!s)
+		return (NULL);
+	str = (char *)malloc(sizeof(char) * (ft_strlen(s) + 1));
+	if (!str)
+		return (NULL);
+	i = 0;
+	while (s[i])
+	{
+		str[i] = s[i];
+		i++;
+	}
+	str[i] = '\0';
+	return (str);
 }
+
 char	*ft_strjoin(char *s1, char *s2)
 {
 	char	*str;
@@ -95,6 +95,7 @@ char	*ft_strchr(char *s, int c)
 		return (&s[i]);
 	return (NULL);
 }
+
 char	*ft_substr(char *s, unsigned int start, size_t len)
 {
 	size_t	i;
