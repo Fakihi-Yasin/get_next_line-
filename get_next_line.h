@@ -6,18 +6,18 @@
 /*   By: yafakihi <yafakihi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/12/27 15:44:57 by yafakihi          #+#    #+#             */
-/*   Updated: 2026/01/07 03:07:37 by yafakihi         ###   ########.fr       */
+/*   Updated: 2026/01/07 20:51:20 by yafakihi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef GET_NEXT_LINE_H
 # define GET_NEXT_LINE_H
 # ifndef BUFFER_SIZE
-# define BUFFER_SIZE 10
+#  define BUFFER_SIZE 42
 # endif
-# include <stdlib.h>
 # include <fcntl.h>
 # include <stdio.h>
+# include <stdlib.h>
 # include <unistd.h>
 
 char	*get_next_line(int fd);
