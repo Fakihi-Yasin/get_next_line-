@@ -6,7 +6,7 @@
 /*   By: yafakihi <yafakihi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/12/27 15:44:47 by yafakihi          #+#    #+#             */
-/*   Updated: 2026/01/05 13:23:56 by yafakihi         ###   ########.fr       */
+/*   Updated: 2026/01/07 02:38:11 by yafakihi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,33 +22,11 @@ size_t	ft_strlen(const char *str)
 	return (len);
 }
 
-// char	*ft_strdup(char *s)
-// {
-// 	char	*str;
-// 	int		i;
-
-// 	if (!s)
-// 		return (NULL);
-// 	str = (char *)malloc(sizeof(char) * (ft_strlen(s) + 1));
-// 	if (!str)
-// 		return (NULL);
-// 	i = 0;
-// 	while (s[i])
-// 	{
-// 		str[i] = s[i];
-// 		i++;
-// 	}
-// 	str[i] = '\0';
-// 	return (str);
-// }
-
 char	*ft_strjoin(char *s1, char *s2)
 {
 	char	*str;
 	size_t	i;
 	size_t	j;
-	size_t	len1;
-	size_t	len2;
 
 	if (!s1)
 	{
@@ -59,19 +37,14 @@ char	*ft_strjoin(char *s1, char *s2)
 	}
 	if (!s2)
 		return (NULL);
-	len1 = ft_strlen(s1);
-	len2 = ft_strlen(s2);
-	str = malloc(len1 + len2 + 1);
+	str = malloc(ft_strlen(s1) + ft_strlen(s2) + 1);
 	if (!str)
 		return (free(s1), NULL);
 	i = 0;
-	while (i < len1)
-	{
-		str[i] = s1[i];
-		i++;
-	}
 	j = 0;
-	while (j < len2)
+	while (s1[i])
+		str[i++] = s1[i];
+	while (s2[j])
 		str[i++] = s2[j++];
 	str[i] = '\0';
 	free(s1);

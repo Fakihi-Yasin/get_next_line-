@@ -6,7 +6,7 @@
 /*   By: yafakihi <yafakihi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/12/27 15:44:54 by yafakihi          #+#    #+#             */
-/*   Updated: 2026/01/05 13:25:31 by yafakihi         ###   ########.fr       */
+/*   Updated: 2026/01/07 02:47:11 by yafakihi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -96,6 +96,43 @@ char *get_next_line(int fd)
 
     line = get_line(buffer);
     buffer = get_rest(buffer);
-
     return (line);
+}
+// int main()
+// {
+//     int fd = open("test.txt", O_RDONLY);
+//     if (fd < 0)
+//     {
+//         return 1;
+//     }
+//     char *line;
+
+//     line = get_next_line(fd);
+//     printf("%s", line);
+//     free(line);
+//     // while ((line = get_next_line(fd)) != NULL)
+//     // {
+//     //     printf("%s", line);
+//     //     free(line);
+//     // }
+//     close(fd);
+//     return (0);
+// }
+
+int main (){
+    int fd;
+    char *line;
+    fd = open("test7.txt", O_RDONLY);
+    if(fd < 0) 
+        return 1;
+
+    line = get_next_line(fd);
+    printf("%s", line);
+    // while ((line = get_next_line(fd)) != NULL)
+    // {
+    //     printf("%s", line);
+    //     free(line);
+    // }
+    close(fd);
+    return (0);
 }
