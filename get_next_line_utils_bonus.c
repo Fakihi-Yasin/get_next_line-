@@ -6,11 +6,11 @@
 /*   By: yafakihi <yafakihi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/01/07 02:52:32 by yafakihi          #+#    #+#             */
-/*   Updated: 2026/01/07 02:52:35 by yafakihi         ###   ########.fr       */
+/*   Updated: 2026/01/07 03:01:09 by yafakihi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "get_next_line.h"
+#include "get_next_line_bonus.h"
 
 size_t	ft_strlen(const char *str)
 {

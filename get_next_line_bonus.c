@@ -10,8 +10,7 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "get_next_line.h"
-#include <unistd.h>
+#include "get_next_line_bonus.h"
 
 static char *read_buffer(int fd, char *buffer)
 {
@@ -19,12 +18,12 @@ static char *read_buffer(int fd, char *buffer)
     int bytes = 1;
 
     if (!temp) return NULL;
-    while (bytes > 0 && !ft_strchr_b(buffer, '\n'))
+    while (bytes > 0 && !ft_strchr(buffer, '\n'))
     {
         bytes = read(fd, temp, BUFFER_SIZE);
         if (bytes < 0) { free(temp); return NULL; }
         temp[bytes] = '\0';
-        buffer = ft_strjoin_b(buffer, temp);
+        buffer = ft_strjoin(buffer, temp);
         if (!buffer) { free(temp); return NULL; }
     }
     free(temp);
@@ -68,7 +67,7 @@ static char *get_rest(char *buffer)
 
 char *get_next_line(int fd)
 {
-    static char *buffers[OPEN_MAX];
+    static char *buffers[OPEN_MAx];
     char *line;
 
     if (fd < 0 || fd >= OPEN_MAX || BUFFER_SIZE <= 0 || read(fd, NULL, 0) < 0)
