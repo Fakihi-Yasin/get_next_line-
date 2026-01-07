@@ -6,7 +6,7 @@
 /*   By: yafakihi <yafakihi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/12/27 15:44:47 by yafakihi          #+#    #+#             */
-/*   Updated: 2026/01/07 18:43:39 by yafakihi         ###   ########.fr       */
+/*   Updated: 2026/01/07 20:55:56 by yafakihi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -71,8 +71,8 @@ char	*ft_strchr(char *s, int c)
 
 char	*ft_substr(char *s, unsigned int start, size_t len)
 {
-	size_t i;
-	char *str;
+	size_t	i;
+	char	*str;
 
 	if (!s)
 		return (NULL);
