@@ -55,6 +55,35 @@ int main(void)
     close(fd);
     return (0);
 }
+```bash
+---Bonus
+int main(){
+	int fd1 = open("file1.txt", O_RDONLY);
+	int fd2 = open("file2.txt", O_RDONLY);
+	int fd3 = open("file3.txt", O_RDONLY);
+	char *line;
+	int round = 0;
+	while (round <= 2){
+		line = get_next_line(fd1);
+		printf("F1 : %s\n", line);
+		free(line);
+
+		line = get_next_line(fd2);
+		printf("F2 : %s\n", line);
+		free(line);
+
+		line = get_next_line(fd3);
+		printf("F3 : %s\n", line);
+		free(line);
+
+		round++;
+	}
+	close(fd1);
+	close(fd2);
+	close(fd3);
+    return (0);
+}
+
 ```
 
 ### Resources

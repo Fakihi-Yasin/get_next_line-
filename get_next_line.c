@@ -6,7 +6,7 @@
 /*   By: yafakihi <yafakihi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/12/27 15:44:54 by yafakihi          #+#    #+#             */
-/*   Updated: 2026/01/07 18:34:23 by yafakihi         ###   ########.fr       */
+/*   Updated: 2026/01/09 16:26:50 by yafakihi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -92,15 +92,15 @@ char	*get_next_line(int fd)
 // int main (){
 //     int fd;
 //     char *line;
-//     fd = open("many_lines.txt", O_RDONLY);
-
+//     fd = open("many_lines22.txt", O_RDONLY | O_CREAT, 0644);
 //     line = get_next_line(fd);
-//     printf("%s", line);
-//     // while ((line = get_next_line(fd)) != NULL)
-//     // {
-//     //     printf("%s", line);
-//     //     free(line);
-//     // }
+//     while ((line = get_next_line(fd)) != NULL)
+//     {
+//         printf("%s", line);
+//         free(line);
+//     }
+// 	printf("%s", line);
+// 	free(line);
 //     close(fd);
-//     return (0);
+//     return (0);	
 // }
