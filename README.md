@@ -35,7 +35,8 @@ valgrind --leak-check=full ./gnl_reader_bs1 test_files/large.txt
 **Usage examples**
 - Simple usage from a C program:
 
-```bash
+```
+### MANDATORY
 #include <fcntl.h>
 #include <stdio.h>
 
@@ -55,8 +56,8 @@ int main(void)
     close(fd);
     return (0);
 }
-```bash
----Bonus
+
+### BONUS
 int main(){
 	int fd1 = open("file1.txt", O_RDONLY);
 	int fd2 = open("file2.txt", O_RDONLY);
