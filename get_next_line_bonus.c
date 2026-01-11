@@ -69,7 +69,8 @@ static char	*get_rest(char *buffer)
 		free(buffer);
 		return (NULL);
 	}
-	rest = ft_substr(buffer, i + 1, ft_strlen(buffer) - i - 1);
+	i++;
+	rest = ft_substr(buffer, i, ft_strlen(buffer) - i);
 	free(buffer);
 	return (rest);
 }
@@ -79,7 +80,7 @@ char	*get_next_line(int fd)
 	static char	*buffers[OPEN_MAX];
 	char		*line;
 
-	if (fd < 0 || fd >= OPEN_MAX || BUFFER_SIZE <= 0 || read(fd, NULL, 0) < 0)
+	if (fd < 0 || fd >= OPEN_MAX || BUFFER_SIZE <= 0)
 		return (NULL);
 	buffers[fd] = read_buffer(fd, buffers[fd]);
 	if (!buffers[fd])

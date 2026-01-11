@@ -6,7 +6,7 @@
 /*   By: yafakihi <yafakihi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/12/27 15:44:54 by yafakihi          #+#    #+#             */
-/*   Updated: 2026/01/09 16:26:50 by yafakihi         ###   ########.fr       */
+/*   Updated: 2026/01/11 12:01:03 by yafakihi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -69,7 +69,8 @@ static char	*get_rest(char *buffer)
 		free(buffer);
 		return (NULL);
 	}
-	rest = ft_substr(buffer, i + 1, ft_strlen(buffer) - i - 1);
+	i++;
+	rest = ft_substr(buffer, i, ft_strlen(buffer) - i);
 	free(buffer);
 	return (rest);
 }
@@ -79,7 +80,7 @@ char	*get_next_line(int fd)
 	static char	*buffer;
 	char		*line;
 
-	if (fd < 0 || BUFFER_SIZE <= 0 || read(fd, NULL, 0) < 0)
+	if (fd < 0 || BUFFER_SIZE <= 0)
 		return (NULL);
 	buffer = read_buffer(fd, buffer);
 	if (!buffer)
@@ -88,19 +89,3 @@ char	*get_next_line(int fd)
 	buffer = get_rest(buffer);
 	return (line);
 }
-
-// int main (){
-//     int fd;
-//     char *line;
-//     fd = open("many_lines22.txt", O_RDONLY | O_CREAT, 0644);
-//     line = get_next_line(fd);
-//     while ((line = get_next_line(fd)) != NULL)
-//     {
-//         printf("%s", line);
-//         free(line);
-//     }
-// 	printf("%s", line);
-// 	free(line);
-//     close(fd);
-//     return (0);	
-// }
